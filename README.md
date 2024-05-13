@@ -4,7 +4,7 @@
 | Question  | Solution | Leetcode  | Level | Topic |
 | ------------- | ------------- | ------------- | ------------- |-------------|
 | Concatenation of Array |[Github](https://github.com/AkashKobal/leet-code-python/tree/main/Concatenation-of-Array)  | [Leetcode](https://leetcode.com/submissions/detail/1243554248/) | Easy  |Array|
-| Find All Duplicates in an Array | [Github](https://github.com/AkashKobal/leet-code-python/tree/main/Find-All-Duplicates-in-an-Array)  | [Leetcode](https://leetcode.com/submissions/detail/1243537111/) | Easy  | Array|
+| Find All Duplicates in an Array | [Github](https://github.com/AkashKobal/leet-code-python/tree/main/Find-All-Duplicates-in-an-Array)  | [Leetcode](https://leetcode.com/submissions/detail/1243537111/) | Medium  | Array|
 | Find the Highest Altitude | [Github](https://github.com/AkashKobal/leet-code-python/tree/main/Find-the-Highest-Altitude)  | [Leetcode](https://leetcode.com/submissions/detail/1243569667/)  | Easy |-------------|
 | Matrix Diagonal Sum | [Github](https://github.com/AkashKobal/leet-code-python/tree/main/Matrix-Diagonal-Sum) | [Leetcode](https://leetcode.com/submissions/detail/1243514379/)  | Easy |-------------|
 | Maximum Product Difference Between Two Pairs | [Github](https://github.com/AkashKobal/leet-code-python/tree/main/Maximum-Product-Difference-Between-Two-Pairs) | [Leetcode](https://leetcode.com/submissions/detail/1242199209/)  | Easy |-------------|
