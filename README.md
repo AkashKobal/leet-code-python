@@ -12,7 +12,7 @@
 | Palindrome Number | [Github](https://github.com/AkashKobal/leet-code-python/tree/main/Palindrome-Number) | [Leetcode](https://leetcode.com/submissions/detail/1241919703/)  | Easy |-------------|
 | Reverse Linked List | [Github](https://github.com/AkashKobal/leet-code-python/tree/main/Reverse-Linked-List) | [Leetcode]()  | Easy |-------------|
 | Roman to Integer | [Github](https://github.com/AkashKobal/leet-code-python/tree/main/Roman-to-Integer) | [Leetcode](https://leetcode.com/submissions/detail/1241910541/)  | Easy |-------------|
-| Rotate Image | [Github](https://github.com/AkashKobal/leet-code-python/tree/main/Rotate-Image) | [Leetcode](https://leetcode.com/submissions/detail/1245861768/)  | Easy |-------------|
+| Rotate Image | [Github](https://github.com/AkashKobal/leet-code-python/tree/main/Rotate-Image) | [Leetcode](https://leetcode.com/submissions/detail/1245861768/)  | Medium |-------------|
 | Running Sum of 1d Array | [Github](https://github.com/AkashKobal/leet-code-python/tree/main/Running-Sum-of-1d-Array) | [Leetcode](https://leetcode.com/submissions/detail/1241920612/)  | Easy |-------------|
 | Two Sum | [Github](https://github.com/AkashKobal/leet-code-python/tree/main/Two-Sum) | [Leetcode](https://leetcode.com/submissions/detail/1241924802/)  | Easy |-------------|
 
