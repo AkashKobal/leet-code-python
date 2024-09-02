@@ -38,3 +38,25 @@ Explanation: The students go in turns as follows:
 - Student number 3 uses 2 chalk so k = 5.
 - Student number 0 uses 3 chalk so k = 2.
 Student number 1 does not have enough chalk, so they will have to replace it.
+
+```py
+class Solution:
+  def chalkReplacer(self, chalk: List[int], k: int) -> int:
+        index = 0
+        total = sum(chalk)
+        k%=total
+
+        while k>=0:
+            if k<=0:
+                return index
+                break
+            if k<chalk[index]:
+                return index
+                break
+            k-=chalk[index]
+            if index == len(chalk)-1:
+                index = 0
+            else:
+                index+=1
+        return -1
+```
