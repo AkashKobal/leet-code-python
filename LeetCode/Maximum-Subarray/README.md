@@ -26,3 +26,16 @@ Example 3:
 Input: nums = [5,4,-1,7,8]
 Output: 23
 Explanation: The subarray [5,4,-1,7,8] has the largest sum 23.
+
+
+```py
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        curr_sum = nums[0] # initializing first element to curr_sum
+        max_sum = nums[0] # initializing max_sum to first element
+        for i in range(1,len(nums)):
+            curr_sum = max(curr_sum + nums[i], nums[i]) # formula
+            max_sum = max(curr_sum,max_sum)
+
+        return max_sum
+```
