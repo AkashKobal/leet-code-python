@@ -42,3 +42,26 @@ Example 3:
 
 Input: s = "zbax", k = 2
 Output: 8
+
+```py
+class Solution:
+    def getLucky(self, s: str, k: int) -> int:
+        # create a empty string to store converted numbers from characters
+        result = ""
+
+        # convert all characters from string into number
+        for character in s:
+            result += str(ord(character)-96)
+        
+        # calculate sum of all numbers 
+        while(k>0 and len(result)>1):
+            temp = 0
+            character = 0
+            while(character < len(result)):
+                temp += int(result[character])
+                character+=1
+            result = str(temp)
+            k -=1
+        return int(result)
+
+```
