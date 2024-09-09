@@ -36,3 +36,28 @@ Input: original = [1,2], m = 1, n = 1
 Output: []
 Explanation: There are 2 elements in original.
 It is impossible to fit 2 elements in a 1x1 2D array, so return an empty 2D array.
+
+## Solution
+```py
+class Solution:
+    def construct2DArray(self, original: List[int], m: int, n: int) -> List[List[int]]:
+         # Check if the total elements match m * n
+        if n * m != len(original):
+            return []
+        
+        ans = []
+        temp = []
+        cnt = 0
+        
+        for val in original:
+            temp.append(val)  # Add the current element to the temp row
+            cnt += 1
+            
+            if cnt == n:  # If temp has enough elements for one row
+                ans.append(temp)  # Append the row to the 2D array
+                temp = []  # Reset temp for the next row
+                cnt = 0  # Reset the counter
+
+        return ans
+
+```
