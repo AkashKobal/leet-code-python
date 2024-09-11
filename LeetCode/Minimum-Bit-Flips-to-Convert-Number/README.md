@@ -29,3 +29,12 @@ Explanation: The binary representation of 3 and 4 are 011 and 100 respectively. 
 - Flip the second bit from the right: 010 -> 000.
 - Flip the third bit from the right: 000 -> 100.
 It can be shown we cannot convert 3 to 4 in less than 3 steps. Hence, we return 3.
+
+## Solution
+```py
+class Solution:
+    def minBitFlips(self, start: int, goal: int) -> int:
+        xor_value = start ^ goal
+        return bin(xor_value).count('1')
+
+```
