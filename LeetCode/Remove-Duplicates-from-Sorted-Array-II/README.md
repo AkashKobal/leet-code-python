@@ -44,3 +44,20 @@ Input: nums = [0,0,1,1,1,1,2,3,3]
 Output: 7, nums = [0,0,1,1,2,3,3,_,_]
 Explanation: Your function should return k = 7, with the first seven elements of nums being 0, 0, 1, 1, 2, 3 and 3 respectively.
 It does not matter what you leave beyond the returned k (hence they are underscores).
+
+## Solution
+```py
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        if len(nums) <= 2:
+            return len(nums)
+
+        j = 1  # Pointer for the position to place the next valid element
+
+        for i in range(2, len(nums)):
+            if nums[i] != nums[j - 1]: # if they r not equal only then
+                j += 1 # increment j by 1
+                nums[j] = nums[i] # swap i and j
+
+        return j + 1
+```
