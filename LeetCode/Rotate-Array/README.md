@@ -23,3 +23,31 @@ Output: [3,99,-1,-100]
 Explanation: 
 rotate 1 steps to the right: [99,-1,-100,3]
 rotate 2 steps to the right: [3,99,-1,-100]
+
+## Solution
+```py
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        
+        size = len(nums)
+        k = k % len(nums)
+        start = 0
+        last = 0
+        currIdx = 0
+        for round in range(k):
+            while currIdx < size:
+                tmp = nums[currIdx]
+                nums[currIdx] = last
+                last = tmp
+                currIdx += k
+            
+            currIdx = currIdx - size
+            if currIdx == start:
+                nums[currIdx] = last
+                currIdx += 1
+                start = currIdx
+
+        return nums     
+
+
+```
