@@ -46,3 +46,26 @@ Input: board =
 ,[".",".",".",".","8",".",".","7","9"]]
 Output: false
 Explanation: Same as Example 1, except with the 5 in the top left corner being modified to 8. Since there are two 8's in the top left 3x3 sub-box, it is invalid.
+
+## Solution
+```py
+class Solution:
+    def isValidSudoku(self, board: List[List[str]]) -> bool:
+        rows = defaultdict(set)
+        cols = defaultdict(set)
+        boxes = defaultdict(set)
+        
+        for r in range(9):
+            for c in range(9):
+                if board[r][c] == ".":
+                    continue
+                
+                if board[r][c] in rows[r] or board[r][c] in cols[c] or board[r][c] in boxes[(r // 3, c // 3)]:
+                    return False
+                
+                rows[r].add(board[r][c])
+                cols[c].add(board[r][c])
+                boxes[(r // 3, c // 3)].add(board[r][c])
+        
+        return True
+```
