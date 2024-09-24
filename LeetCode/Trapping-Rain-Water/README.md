@@ -19,3 +19,24 @@ Example 2:
 
 Input: height = [4,2,0,3,2,5]
 Output: 9
+
+## Solution
+```py
+class Solution:
+    def trap(self, height: List[int]) -> int:
+        if not height:
+            return 0
+        l,r=0,len(height)-1
+        leftmax , rightmax =height[l],height[r]
+        water=0
+        while l<r:
+            if leftmax<rightmax:
+                l+=1
+                leftmax=max(leftmax,height[l])
+                water+=leftmax-height[l]
+            else:
+                r-=1
+                rightmax=max(rightmax,height[r])
+                water+=rightmax-height[r]
+        return water
+```
