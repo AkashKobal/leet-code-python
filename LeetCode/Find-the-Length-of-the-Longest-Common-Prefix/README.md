@@ -31,3 +31,38 @@ Input: arr1 = [1,2,3], arr2 = [4,4,4]
 Output: 0
 Explanation: There exists no common prefix for any pair (arr1[i], arr2[j]), hence we return 0.
 Note that common prefixes between elements of the same array do not count.
+
+## Solution
+```py
+from bisect import bisect_left
+
+class Solution:
+    def longestCommonPrefix(self, arr1: List[int], arr2: List[int]) -> int:
+        
+        # Function to calculate common prefix length between two numbers
+        def commonPrefixLength(num1: int, num2: int) -> int:
+            s1, s2 = str(num1), str(num2)  # Convert to strings to compare digits
+            min_len = min(len(s1), len(s2))
+            for i in range(min_len):
+                if s1[i] != s2[i]:
+                    return i
+            return min_len
+        
+        # Sort both arrays (if not already sorted)
+        arr1.sort()
+        arr2.sort()
+        
+        max_prefix_length = 0
+        
+        # Efficient comparison using binary search
+        for num1 in arr1:
+            idx = bisect_left(arr2, num1)
+            
+            if idx < len(arr2):
+                max_prefix_length = max(max_prefix_length, commonPrefixLength(num1, arr2[idx]))
+            if idx > 0:
+                max_prefix_length = max(max_prefix_length, commonPrefixLength(num1, arr2[idx - 1]))
+
+        return max_prefix_length
+
+```
