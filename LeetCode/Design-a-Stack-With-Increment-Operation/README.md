@@ -33,3 +33,22 @@ stk.pop();                            // return 103 --> Return top of the stack 
 stk.pop();                            // return 202 --> Return top of the stack 202, stack becomes [201]
 stk.pop();                            // return 201 --> Return top of the stack 201, stack becomes []
 stk.pop();                            // return -1 --> Stack is empty return -1.
+
+```py
+class CustomStack:
+
+    def __init__(self, n: int):
+        self.n, self.stack, self.inc = n, [], []
+
+    def push(self, x: int) -> None:
+        if len(self.stack) < self.n: self.stack.append(x), self.inc.append(0)
+
+    def pop(self) -> int:
+        if not self.stack: return -1
+        if len(self.inc) > 1: self.inc[-2] += self.inc[-1]
+        return self.stack.pop() + self.inc.pop()
+
+    def increment(self, k: int, val: int) -> None:
+        if self.inc: self.inc[min(k, len(self.inc)) - 1] += val
+
+```
