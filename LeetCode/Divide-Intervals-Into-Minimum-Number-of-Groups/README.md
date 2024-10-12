@@ -28,3 +28,19 @@ Example 2:
 Input: intervals = [[1,3],[5,6],[8,10],[11,13]]
 Output: 1
 Explanation: None of the intervals overlap, so we can put all of them in one group.
+
+```py
+class Solution:
+    def minGroups(self, intervals: List[List[int]]) -> int:
+        start_times = sorted(i[0] for i in intervals)
+        end_times = sorted(i[1] for i in intervals)
+        end_ptr, group_count = 0, 0
+
+        for start in start_times:
+            if start > end_times[end_ptr]:
+                end_ptr += 1
+            else:
+                group_count += 1
+
+        return group_count
+```
