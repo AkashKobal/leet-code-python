@@ -32,3 +32,19 @@ Operation 1: Select i = 1, so nums becomes [1,4,3,3,3]. Your score increases by 
 Operation 2: Select i = 1, so nums becomes [1,2,3,3,3]. Your score increases by 4.
 Operation 3: Select i = 2, so nums becomes [1,1,1,3,3]. Your score increases by 3.
 The final score is 10 + 4 + 3 = 17.
+
+```py
+class Solution:
+    def maxKelements(self, nums: List[int], k: int) -> int:
+        heapify(pq:=[-x for x in nums])
+        score=0
+        for i in range(k):
+            x=-heappop(pq)
+            score+=x
+            if x==1:
+                score+=k-1-i
+                break
+            heappush(pq, -((x+2)//3))
+        return score
+
+```
