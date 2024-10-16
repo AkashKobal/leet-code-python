@@ -1,0 +1,3 @@
+Input: a = 1, b = 1, c = 7
+Output: "ccaccbcc"
+Explanation: "ccbccacc" would also be a correct answer.
