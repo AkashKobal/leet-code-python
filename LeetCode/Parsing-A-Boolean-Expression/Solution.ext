@@ -1,0 +1,6 @@
+Input: expression = "&(|(f))"
+Output: false
+Explanation: 
+First, evaluate |(f) --> f. The expression is now "&(f)".
+Then, evaluate &(f) --> f. The expression is now "f".
+Finally, return false.
