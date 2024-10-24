@@ -30,3 +30,18 @@ Example 3:
 
 Input: root1 = [], root2 = [1]
 Output: false
+
+```py
+class Solution:
+    def flipEquiv(self, root1, root2):
+        
+        def checker(node1, node2):
+            if not node1 and not node2:
+                return True
+            if not node1 or not node2 or node1.val != node2.val:
+                return False
+            return ((checker(node1.left, node2.left) or checker(node1.left, node2.right)) and
+                    (checker(node1.right, node2.right) or checker(node1.right, node2.left)))
+        
+        return checker(root1, root2)
+```
