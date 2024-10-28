@@ -29,3 +29,22 @@ Example 2:
 Input: nums = [2,3,5,6,7]
 Output: -1
 Explanation: There is no square streak in nums so return -1.
+
+```py
+class Solution:
+    def longestSquareStreak(self, nums):
+        mp = {}
+        nums.sort()
+        res = -1
+
+        for num in nums:
+            sqrt = isqrt(num)
+
+            if sqrt * sqrt == num and sqrt in mp:
+                mp[num] = mp[sqrt] + 1
+                res = max(res, mp[num])
+            else:
+                mp[num] = 1
+
+        return res
+```
