@@ -1,0 +1,7 @@
+Input: nums = [4,3,6,16,8,2]
+Output: 3
+Explanation: Choose the subsequence [4,16,2]. After sorting it, it becomes [2,4,16].
+- 4 = 2 * 2.
+- 16 = 4 * 4.
+Therefore, [4,16,2] is a square streak.
+It can be shown that every subsequence of length 4 is not a square streak.
