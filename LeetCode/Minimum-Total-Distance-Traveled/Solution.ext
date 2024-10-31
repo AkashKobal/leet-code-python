@@ -1,0 +1,9 @@
+Input: robot = [0,4,6], factory = [[2,2],[6,2]]
+Output: 4
+Explanation: As shown in the figure:
+- The first robot at position 0 moves in the positive direction. It will be repaired at the first factory.
+- The second robot at position 4 moves in the negative direction. It will be repaired at the first factory.
+- The third robot at position 6 will be repaired at the second factory. It does not need to move.
+The limit of the first factory is 2, and it fixed 2 robots.
+The limit of the second factory is 2, and it fixed 1 robot.
+The total distance is |2 - 0| + |2 - 4| + |6 - 6| = 4. It can be shown that we cannot achieve a better total distance than 4.
