@@ -30,3 +30,17 @@ Input: candidates = [8,8]
 Output: 2
 Explanation: The largest combination [8,8] has a bitwise AND of 8 & 8 = 8 > 0.
 The size of the combination is 2, so we return 2.
+
+## Solution
+```py
+class Solution:
+    def largestCombination(self, candidates: List[int]) -> int:
+        max_set=0
+        for b in range(24):
+            b_bit_set=0
+            for x in candidates:
+                b_bit_set+=(x>>b &1)
+            max_set=max(max_set, b_bit_set)
+        return max_set
+
+```
