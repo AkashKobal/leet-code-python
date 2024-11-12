@@ -41,3 +41,30 @@ Output: [0]
 Explanation:
 No item has a price less than or equal to 5, so no item can be chosen.
 Hence, the answer to the query is 0.
+
+## Solution
+```py
+class Solution(object):
+    def maximumBeauty(self, items, queries):
+        
+        maxI = float('inf')
+        res = [[0, 0, maxI]]
+    
+        items.sort(key=lambda x: x[0])
+
+        for price, beauty in items:
+            lastBracket = res[-1]
+            if beauty > lastBracket[1]:
+                res[-1][2] = price
+                res.append([price, beauty, maxI])
+
+        ans = []
+
+        for x in queries:
+            for i in range(len(res) - 1, -1, -1):
+                if res[i][0] <= x:
+                    ans.append(res[i][1])
+                    break
+
+        return ans
+```
