@@ -35,3 +35,22 @@ Example 2:
 Input: n = 4, edges = [[0,2],[1,3],[1,2]]
 Output: -1
 Explanation: Team 2 is weaker than team 0 and team 1. Team 3 is weaker than team 1. But team 1 and team 0 are not weaker than any other teams. So the answer is -1.
+
+## Solution
+```py
+class Solution:
+    def findChampion(self, n: int, edges: List[List[int]]) -> int:
+        count = defaultdict(int)
+
+        for u, v in edges:
+            count[v] += 1
+
+        ans, parentCount = 0, 0
+        for i in range(n):
+            if not count[i]:
+                ans = i
+                parentCount += 1
+            if parentCount == 2:
+                return -1
+        return ans
+```
