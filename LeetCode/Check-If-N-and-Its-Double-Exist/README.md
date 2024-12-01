@@ -24,3 +24,5 @@ Output: false
 Explanation: There is no i and j that satisfy the conditions.
 
 ## Solution
+```py
+```
