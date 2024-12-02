@@ -30,3 +30,15 @@ Example 3:
 Input: sentence = "i am tired", searchWord = "you"
 Output: -1
 Explanation: "you" is not a prefix of any word in the sentence.
+
+## Solution
+```py
+class Solution:
+    def isPrefixOfWord(self, s: str, t: str) -> int:
+        s=' '+s
+        t=' '+t
+        n, m=len(s), s.find(t)
+        if m==-1: return -1
+        return 1+s[:m].count(' ')
+
+```
