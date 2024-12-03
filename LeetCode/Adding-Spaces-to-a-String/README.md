@@ -35,3 +35,24 @@ Input: s = "spacing", spaces = [0,1,2,3,4,5,6]
 Output: " s p a c i n g"
 Explanation:
 We are also able to place spaces before the first character of the string.
+
+## SOlution
+```py
+class Solution:
+    def addSpaces(self, s: str, spaces: List[int]) -> str:
+        m, n=len(spaces), len(s)
+        spaces.append(n)
+        t=[' ']*(m+n)
+        i, j=0, 0
+        while i<n:
+            while i<n and i!=spaces[j]:
+                t[i+j]=s[i]
+                i+=1
+            if j<m:
+                t[i+j+1]=s[i]
+                j+=1
+            i+=1
+        return "".join(t)
+
+
+```
