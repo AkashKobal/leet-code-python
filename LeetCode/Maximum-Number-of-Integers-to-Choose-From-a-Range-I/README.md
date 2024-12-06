@@ -35,3 +35,22 @@ Input: banned = [11], n = 7, maxSum = 50
 Output: 7
 Explanation: You can choose the integers 1, 2, 3, 4, 5, 6, and 7.
 They are from the range [1, 7], all did not appear in banned, and their sum is 28, which did not exceed maxSum.
+
+## Solution
+```py
+class Solution:
+    def maxCount(self, banned: list[int], n: int, maxSum: int) -> int:
+        banned_set = set(banned)  # Use a set for quick lookups
+        total_sum = 0  # Track the cumulative sum
+        count = 0  # Track the count of valid numbers
+
+        for i in range(1, n + 1):
+            if i in banned_set:
+                continue  # Skip banned numbers
+            total_sum += i
+            if total_sum > maxSum:
+                break  # Stop if the sum exceeds maxSum
+            count += 1
+
+        return count
+```
