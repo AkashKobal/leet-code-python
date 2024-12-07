@@ -35,3 +35,27 @@ Explanation:
 - Divide the bag with 4 balls into two bags of sizes 2 and 2. [2,2,2,4,4,2] -> [2,2,2,2,2,4,2].
 - Divide the bag with 4 balls into two bags of sizes 2 and 2. [2,2,2,2,2,4,2] -> [2,2,2,2,2,2,2,2].
 The bag with the most number of balls has 2 balls, so your penalty is 2, and you should return 2.
+
+## Solution
+```py
+class Solution:
+    def minimumSize(self, nums: List[int], maxOperations: int) -> int:
+        # Helper function to determine if a penalty is feasible
+        def canAchievePenalty(penalty):
+            operations = 0
+            for balls in nums:
+                # Count how many splits are required to make balls <= penalty
+                if balls > penalty:
+                    operations += (balls - 1) // penalty
+            return operations <= maxOperations
+        
+        # Binary search for the minimum penalty
+        left, right = 1, max(nums)  # Penalty can range from 1 to max(nums)
+        while left < right:
+            mid = (left + right) // 2
+            if canAchievePenalty(mid):
+                right = mid  # Try for a smaller penalty
+            else:
+                left = mid + 1  # Increase the penalty
+        return left
+```
