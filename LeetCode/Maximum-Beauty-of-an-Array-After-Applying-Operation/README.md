@@ -43,7 +43,7 @@ class Solution:
     def maximumBeauty(self, nums: list[int], k: int) -> int:
         # Extend the range for each element in nums
         events = []
-        for num in nums:
+        for num in nums: 
             events.append((num - k, 1))  # Start of range
             events.append((num + k + 1, -1))  # End of range (exclusive)
 
