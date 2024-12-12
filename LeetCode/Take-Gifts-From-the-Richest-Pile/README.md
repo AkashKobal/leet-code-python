@@ -33,3 +33,18 @@ Explanation:
 In this case, regardless which pile you choose, you have to leave behind 1 gift in each pile. 
 That is, you can't take any pile with you. 
 So, the total gifts remaining are 4.
+
+## Solution
+```py
+class Solution:
+    def pickGifts(self, gifts: List[int], k: int) -> int:
+        gifts=[-x for x in gifts]
+        heapify(gifts)
+        x, i=1<<32, 0
+        while i<k and x>1:
+            x=-heappop(gifts)
+            heappush(gifts, -isqrt(x))
+            i+=1
+        return -sum(gifts)
+
+```
