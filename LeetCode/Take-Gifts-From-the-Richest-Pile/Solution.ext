@@ -1,9 +1,11 @@
-Input: gifts = [25,64,9,4,100], k = 4
-Output: 29
-Explanation: 
-The gifts are taken in the following way:
-- In the first second, the last pile is chosen and 10 gifts are left behind.
-- Then the second pile is chosen and 8 gifts are left behind.
-- After that the first pile is chosen and 5 gifts are left behind.
-- Finally, the last pile is chosen again and 3 gifts are left behind.
-The final remaining gifts are [5,8,9,4,3], so the total number of gifts remaining is 29.
+class Solution:
+    def pickGifts(self, gifts: List[int], k: int) -> int:
+        gifts=[-x for x in gifts]
+        heapify(gifts)
+        x, i=1<<32, 0
+        while i<k and x>1:
+            x=-heappop(gifts)
+            heappush(gifts, -isqrt(x))
+            i+=1
+        return -sum(gifts)
+       
