@@ -1,0 +1,9 @@
+Input: s = "cczazcc", repeatLimit = 3
+Output: "zzcccac"
+Explanation: We use all of the characters from s to construct the repeatLimitedString "zzcccac".
+The letter 'a' appears at most 1 time in a row.
+The letter 'c' appears at most 3 times in a row.
+The letter 'z' appears at most 2 times in a row.
+Hence, no letter appears more than repeatLimit times in a row and the string is a valid repeatLimitedString.
+The string is the lexicographically largest repeatLimitedString possible so we return "zzcccac".
+Note that the string "zzcccca" is lexicographically larger but the letter 'c' appears more than 3 times in a row, so it is not a valid repeatLimitedString.
