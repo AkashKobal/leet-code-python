@@ -1,0 +1,9 @@
+Input: heights = [6,4,8,5,2,7], queries = [[0,1],[0,3],[2,4],[3,4],[2,2]]
+Output: [2,5,-1,5,2]
+Explanation: In the first query, Alice and Bob can move to building 2 since heights[0] < heights[2] and heights[1] < heights[2]. 
+In the second query, Alice and Bob can move to building 5 since heights[0] < heights[5] and heights[3] < heights[5]. 
+In the third query, Alice cannot meet Bob since Alice cannot move to any other building.
+In the fourth query, Alice and Bob can move to building 5 since heights[3] < heights[5] and heights[4] < heights[5].
+In the fifth query, Alice and Bob are already in the same building.  
+For ans[i] != -1, It can be shown that ans[i] is the leftmost building where Alice and Bob can meet.
+For ans[i] == -1, It can be shown that there is no building where Alice and Bob can meet.
