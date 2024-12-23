@@ -1,0 +1,8 @@
+Input: root = [1,4,3,7,6,8,5,null,null,null,null,9,null,10]
+Output: 3
+Explanation:
+- Swap 4 and 3. The 2nd level becomes [3,4].
+- Swap 7 and 5. The 3rd level becomes [5,6,8,7].
+- Swap 8 and 7. The 3rd level becomes [5,6,7,8].
+We used 3 operations so return 3.
+It can be proven that 3 is the minimum number of operations needed.
