@@ -29,3 +29,17 @@ Example 3:
 Input: words = ["blue","green","bu"]
 Output: []
 Explanation: No string of words is substring of another string.
+
+## Solution
+```py
+class Solution:
+    def stringMatching(self, words: List[str]) -> List[str]:
+        ans = []
+        for i in range(len(words)):
+            for j in range(len(words)):
+                if i != j:
+                    if words[j].find(words[i]) != -1:
+                        ans.append(words[i])
+                        break
+        return ans
+```
