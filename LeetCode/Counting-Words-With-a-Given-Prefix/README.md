@@ -22,3 +22,15 @@ Example 2:
 Input: words = ["leetcode","win","loops","success"], pref = "code"
 Output: 0
 Explanation: There are no strings that contain "code" as a prefix.
+
+## Solution
+```py
+class Solution:
+    def prefixCount(self, words: list[str], pref: str) -> int:
+        c = 0
+        n = len(pref)
+        for word in words:
+            if len(word) >= n and word[:n] == pref:
+                c += 1
+        return c
+```
