@@ -27,3 +27,15 @@ Example 3:
 Input: s = "true", k = 4
 Output: true
 Explanation: The only possible solution is to put each character in a separate string.
+
+## Solution
+```py
+from collections import Counter
+class Solution:
+    def canConstruct(self, s: str, k: int) -> bool:
+        if len(s) < k: 
+            return False 
+        freq = Counter(s) 
+        odd = sum(1 for count in freq.values() if count % 2 != 0) 
+        return odd <= k
+```
