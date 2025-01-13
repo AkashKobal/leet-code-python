@@ -32,3 +32,11 @@ Output: 2
 
 Explanation:
 We cannot perform any operations, so we return the length of the original string.
+
+## Solution
+```py
+class Solution:
+    def minimumLength(self, s: str) -> int:
+        return sum(2-(f&1) for f in Counter(s).values())
+
+```
