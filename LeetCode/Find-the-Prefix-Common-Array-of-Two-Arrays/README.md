@@ -29,3 +29,24 @@ Output: [0,1,3]
 Explanation: At i = 0: no number is common, so C[0] = 0.
 At i = 1: only 3 is common in A and B, so C[1] = 1.
 At i = 2: 1, 2, and 3 are common in A and B, so C[2] = 3.
+
+## Solution
+```py
+class Solution:
+    def findThePrefixCommonArray(self, A: List[int], B: List[int]) -> List[int]:
+        C = [0]*len(A)
+        seen = set()
+        count= 0
+
+        for i in range(len(A)):
+            if A[i] in seen:
+                count+=1
+            seen.add(A[i])
+            if B[i] in seen:
+                count+=1
+            seen.add(B[i])
+
+            C[i] = count
+        
+        return C
+```
