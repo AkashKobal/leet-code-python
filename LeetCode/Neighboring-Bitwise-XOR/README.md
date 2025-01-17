@@ -42,3 +42,11 @@ Example 3:
 Input: derived = [1,0]
 Output: false
 Explanation: There is no valid original array that gives derived.
+
+## Solution
+```py
+class Solution:
+    def doesValidArrayExist(self, derived: List[int]) -> bool:
+        return reduce(xor, derived)==0
+
+```
