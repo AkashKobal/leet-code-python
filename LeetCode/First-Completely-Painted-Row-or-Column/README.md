@@ -26,3 +26,26 @@ image explanation for example 2 [https://assets.leetcode.com/uploads/2023/01/18/
 Input: arr = [2,8,7,4,1,3,5,6,9], mat = [[3,2,5],[1,4,6],[8,7,9]]
 Output: 3
 Explanation: The second column becomes fully painted at arr[3].
+
+## Solution
+```py
+class Solution:
+    def firstCompleteIndex(self, arr: List[int], mat: List[List[int]]) -> int:
+        m, n=len(mat), len(mat[0])
+        N=m*n
+
+        to_i=[-1]*(N+1)
+        to_j=[-1]*(N+1)
+        for i, row in enumerate(mat):
+            for j, x in enumerate(row):
+                to_i[x]=i
+                to_j[x]=j
+        R=[0]*m
+        C=[0]*n
+        for i, x in enumerate(arr):
+            R[to_i[x]]+=1
+            C[to_j[x]]+=1
+            if R[to_i[x]]==n or C[to_j[x]]==m:
+                return i
+        return -1
+```
