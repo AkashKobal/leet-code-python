@@ -36,3 +36,45 @@ Input: n = 3, edges = [[1,2],[2,3],[3,1]]
 Output: -1
 Explanation: If we add node 1 to the first group, node 2 to the second group, and node 3 to the third group to satisfy the first two edges, we can see that the third edge will not be satisfied.
 It can be shown that no grouping is possible.
+
+## Solution
+```py
+class Solution:
+    def magnificentSets(self, n: int, edges: List[List[int]]) -> int:
+
+        def is_bipartite(node, c):
+            color[node] = c
+            components.append(node)
+            for neighbor in graph[node]:
+                if (not color[neighbor] and not is_bipartite(neighbor, -1*c)
+                    or color[neighbor] == c):
+                    return False
+            return True
+
+        def find_depth(root):
+            visited = [0] * n
+            que, visited[root], depth = deque([root]), 1, 0
+            while que:
+                for _ in range(len(que)):
+                    for neighbor in graph[que.popleft()]:
+                        if not visited[neighbor]:
+                            que.append(neighbor)
+                            visited[neighbor] = 1
+                depth += 1
+            return depth
+
+
+        graph = [[] for _ in range(n)]
+        for u, v in edges:
+            graph[v-1].append(u-1)
+            graph[u-1].append(v-1)
+
+        ans, color = 0, [0] * n
+        for node in range(n):
+            if not color[node]:
+                components = []
+                if not is_bipartite(node, 1):
+                    return -1
+                ans += max(find_depth(node) for node in components)
+        return ans
+```
