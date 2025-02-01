@@ -33,7 +33,7 @@ Input: nums = [4,3,1,6]
 Output: false
 
 Explanation:
-
+ 
 nums[1] and nums[2] are both odd. So the answer is false.
 
 ## Solution
