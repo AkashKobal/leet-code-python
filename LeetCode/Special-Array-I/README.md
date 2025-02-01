@@ -35,3 +35,13 @@ Output: false
 Explanation:
 
 nums[1] and nums[2] are both odd. So the answer is false.
+
+## Solution
+```py
+class Solution:
+    def isArraySpecial(self, nums: list[int]) -> bool:
+        for i in range(len(nums) - 1):
+            if nums[i] % 2 == nums[i + 1] % 2:
+                return False
+        return True
+```
