@@ -32,3 +32,12 @@ Input: nums = [1,2,3]
 Output: true
 Explanation: [1,2,3] is the original sorted array.
 You can rotate the array by x = 0 positions (i.e. no rotation) to make nums.
+
+## Solution
+```py
+class Solution:
+    def check(self, nums: List[int]) -> bool:
+        return (cntD:=sum(y<x for x, y in pairwise(nums)))==0 or (cntD==1 and nums[-1]<=nums[0])
+
+
+```
