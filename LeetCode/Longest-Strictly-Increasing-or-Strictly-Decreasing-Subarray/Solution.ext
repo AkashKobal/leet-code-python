@@ -1,0 +1,9 @@
+for(i=1 ;i<n; i++){
+    if (nums[i]>nums[i-1]) 
+        inc++, dec=1;// increase inc, reset dec
+    else if (nums[i]<nums[i-1]) 
+        inc=1, dec++;// increase dec, reset inc
+    else 
+        inc=dec=1;//both counters reset
+    ans=max({ans, dec, inc});// update ans
+} 
