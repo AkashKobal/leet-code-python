@@ -45,3 +45,23 @@ The strictly increasing subarrays of nums are [3], [2], and [1].
 The strictly decreasing subarrays of nums are [3], [2], [1], [3,2], [2,1], and [3,2,1].
 
 Hence, we return 3.
+
+## Solution
+```py
+class Solution:
+    def longestMonotonicSubarray(self, nums: List[int]) -> int:
+        n, ans, inc, dec=len(nums), 0, 1, 1
+        if n==1: return 1
+        for i in range(1, n):
+            if nums[i]>nums[i-1]:
+                inc+=1
+                dec=1
+            elif nums[i]<nums[i-1]:
+                inc=1
+                dec+=1
+            else:
+                inc=dec=1
+            ans=max(ans, dec, inc)
+        return ans
+
+```
