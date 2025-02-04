@@ -30,3 +30,15 @@ Example 3:
 Input: nums = [12,17,15,13,10,11,12]
 Output: 33
 Explanation: [10,11,12] is the ascending subarray with the maximum sum of 33.
+
+## Solution
+```py
+class Solution:
+    def maxAscendingSum(self, nums: List[int]) -> int:
+        maxSum=Sum=nums[0]
+        for x, y in pairwise(nums):
+            Sum=y if y<=x else Sum+y
+            maxSum=max(maxSum, Sum)
+        return maxSum
+
+```
