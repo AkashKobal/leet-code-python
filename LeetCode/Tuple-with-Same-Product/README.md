@@ -24,3 +24,19 @@ Explanation: There are 16 valid tuples:
 (2,5,1,10) , (2,5,10,1) , (5,2,1,10) , (5,2,10,1)
 (2,10,4,5) , (2,10,5,4) , (10,2,4,5) , (10,2,5,4)
 (4,5,2,10) , (4,5,10,2) , (5,4,2,10) , (5,4,10,2)
+
+## Solution
+```py
+class Solution:
+    def tupleSameProduct(self, nums):
+        products = {}
+        ans, n = 0, len(nums)
+
+        for i in range(n):
+            for j in range(i + 1, n):
+                prod = nums[i] * nums[j]
+                ans += products.get(prod, 0)
+                products[prod] = products.get(prod, 0) + 1
+
+        return ans * 8
+```
