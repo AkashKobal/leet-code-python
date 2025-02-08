@@ -1,0 +1,12 @@
+ for (auto& q: queries){
+    unsigned x=q[0], c=q[1];//x=ball id,  c=color
+    if (mp.count(x)>0){// ball x is already colored
+        unsigned c0=mp[x];// what color is x before
+        color[c0]--; //old color c0 minus 1
+        if (color[c0]==0) 
+            color.erase(c0);// no color c0
+    }
+    mp[x]=c;// color ball x with c
+    color[c]++;//increase number of balls colored with c
+    ans[i++]=color.size();//gives ans[i]
+}
