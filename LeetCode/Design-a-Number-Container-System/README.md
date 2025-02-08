@@ -32,3 +32,33 @@ nc.change(5, 10); // Your container at index 5 will be filled with number 10.
 nc.find(10); // Number 10 is at the indices 1, 2, 3, and 5. Since the smallest index that is filled with 10 is 1, we return 1.
 nc.change(1, 20); // Your container at index 1 will be filled with number 20. Note that index 1 was filled with 10 and then replaced with 20. 
 nc.find(10); // Number 10 is at the indices 2, 3, and 5. The smallest index that is filled with 10 is 2. Therefore, we return 2.
+
+## Solution
+```py
+class NumberContainers:
+
+    def __init__(self):
+        self.mp={}
+        self.idx=defaultdict(list)
+
+    def change(self, index: int, number: int) -> None:
+        self.mp[index]=number
+        heappush(self.idx[number], index)
+        
+
+    def find(self, number: int) -> int:
+        if number not in self.idx:
+            return -1
+        while self.idx[number]:
+            i=self.idx[number][0]
+            if self.mp[i]==number: return i
+            heappop(self.idx[number])
+        return -1
+
+
+
+# Your NumberContainers object will be instantiated and called as such:
+# obj = NumberContainers()
+# obj.change(index,number)
+# param_2 = obj.find(number)
+```
