@@ -40,3 +40,26 @@ Explanation:
  * After query 2, ball 0 has color 1, and balls 1 and 2 have color 2.
  * After query 3, ball 0 has color 1, balls 1 and 2 have color 2, and ball 3 has color 4.
  * After query 4, ball 0 has color 1, balls 1 and 2 have color 2, ball 3 has color 4, and ball 4 has color 5.
+
+## Solution
+```py
+class Solution:
+    def queryResults(self, limit: int, queries: List[List[int]]) -> List[int]:
+        n=len(queries)
+        ans=[0]*n
+        mp={}
+        color=defaultdict(int)
+        i=0
+        for x, c in queries:
+            if x in mp:
+                c0=mp[x]
+                color[c0]-=1
+                if color[c0]==0:
+                    color.pop(c0)
+            mp[x]=c
+            color[c]+=1
+            ans[i]=len(color)
+            i+=1
+        return ans
+
+```
