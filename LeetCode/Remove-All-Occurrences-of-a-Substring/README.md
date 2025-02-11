@@ -33,3 +33,16 @@ Explanation: The following operations are done:
 - s = "axxyyb", remove "xy" starting at index 2 so s = "axyb".
 - s = "axyb", remove "xy" starting at index 1 so s = "ab".
 Now s has no occurrences of "xy".
+
+## Solution
+```py
+class Solution:
+    def removeOccurrences(self, s: str, part: str) -> str:
+        
+        while True:
+            idx = s.find(part)
+            if idx == -1:
+                break
+            s = s[:idx] + s[idx + len(part):]
+        return s
+```
