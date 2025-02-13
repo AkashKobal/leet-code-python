@@ -36,3 +36,28 @@ After three operations, nums becomes equal to [15, 9].
 After four operations, nums becomes equal to [33].
 At this stage, all the elements of nums are greater than 20 so we can stop.
 It can be shown that 4 is the minimum number of operations needed so that all elements of the array are greater than or equal to 20.
+
+## Solution
+```py
+class Solution(object):
+    def minOperations(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
+        heapq.heapify(nums)
+        res=0
+
+        for i in range(0, len(nums)):
+            x=heapq.heappop(nums)
+            if x<k:
+                res+=1
+                y=heapq.heappop(nums)
+                val= x*2+y if (x<y) else y*2+x
+                heapq.heappush(nums, val)
+            else:
+                break
+
+        return res
+```
