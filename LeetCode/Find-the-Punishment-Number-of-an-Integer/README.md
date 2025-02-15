@@ -32,3 +32,19 @@ Explanation: There are exactly 4 integers i in the range [1, 37] that satisfy th
 - 10 since 10 * 10 = 100 and 100 can be partitioned into 10 + 0. 
 - 36 since 36 * 36 = 1296 and 1296 can be partitioned into 1 + 29 + 6.
 Hence, the punishment number of 37 is 1 + 81 + 100 + 1296 = 1478
+
+## Solution
+```py
+class Solution:
+    def punishmentNumber(self, n: int) -> int:
+        arr = [1,9,10,36,45,55,82,91,99,100,235,297,369,370,379,414,
+               657,675,703,756,792,909,918,945,964,990,991,999,1000]
+        
+        total = 0
+        for num in arr:
+            if num <= n:
+                total += num * num
+            else:
+                break
+        return total
+```
