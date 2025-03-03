@@ -31,3 +31,22 @@ Explanation:
 The element -3 is less than the pivot so it is on the left side of the array.
 The elements 4 and 3 are greater than the pivot so they are on the right side of the array.
 The relative ordering of the elements less than and greater than pivot is also maintained. [-3] and [4, 3] are the respective orderings.
+
+## Solution
+```py
+from typing import List
+
+class Solution:
+    def pivotArray(self, nums: List[int], pivot: int) -> List[int]:
+        less, high, count = [], [], 0
+
+        for num in nums:
+            if num < pivot:
+                less.append(num)
+            elif num == pivot:
+                count += 1
+            else:
+                high.append(num)
+
+        return less + [pivot] * count + high
+```
