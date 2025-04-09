@@ -1,0 +1,2 @@
+        return B-1 if xMin==k else B
+        
