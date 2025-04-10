@@ -1,0 +1,10 @@
+class Solution:
+    def numberOfPowerfulInt(self, start: int, finish: int, limit: int, s: str) -> int:
+        def count(val: int) -> int:
+            chakra = str(val)  # Chakra flow string
+            n = len(chakra) - len(s)  # How much room left for chakra prefix
+
+            if n < 0:
+                return 0  # Not enough space to include suffix
+
+            # dp[i][tight] = number of valid chakra flows from index i
