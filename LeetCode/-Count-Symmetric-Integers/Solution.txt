@@ -1,0 +1,9 @@
+
+            half = n // 2
+            left = sum(int(s[i]) for i in range(half))  # ⬅️ Left chakra
+            right = sum(int(s[i]) for i in range(half, n))  # ➡️ Right chakra
+
+            if left == right:
+                count += 1  # ✅ Symmetry detected, add to mission count
+
+        return count
