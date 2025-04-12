@@ -1,0 +1,3 @@
+            totalCount += permutation
+
+        return int(totalCount)
