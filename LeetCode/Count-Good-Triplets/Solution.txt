@@ -1,0 +1,5 @@
+                        if abs(arr[j] - arr[k]) <= b and abs(arr[i] - arr[k]) <= c:
+                            good_triplets += 1
+                            # 🥋 Rock Lee: "Another success from persistence!" 🥳
+        
+        return good_triplets
