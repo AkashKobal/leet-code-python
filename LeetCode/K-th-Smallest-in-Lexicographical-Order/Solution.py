@@ -1,0 +1,1 @@
+return lexicalOrder(n, k)[k-1]
