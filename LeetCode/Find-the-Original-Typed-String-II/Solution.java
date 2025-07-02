@@ -1,0 +1,1 @@
+word = "aabbccdd", k = 7
