@@ -1,0 +1,1 @@
+Input: k = 5, operations = [0, 1, 1]
