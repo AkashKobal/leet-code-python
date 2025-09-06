@@ -1,0 +1,1 @@
+ceil( sum of depths of all numbers in [l, r] / 2 )
