@@ -1,0 +1,1 @@
+const doesAliceWin = s => /[aeiou]/.test(s)
