@@ -1,0 +1,7 @@
+["abba","baba","bbaa","cd","cd"]
+["a","b","c","d","e"]
+["a", "b", "a"]
+["z","z","z","gsw","wsg","gsw","krptu"]
+["ab","bc","cb","ab","bc"]
+["abbb","aaab"]
+["az","azz"]
