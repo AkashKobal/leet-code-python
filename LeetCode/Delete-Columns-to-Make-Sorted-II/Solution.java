@@ -1,0 +1,7 @@
+["a", "a"]
+["vdy","vei","zvc","zld"]
+["xga","xfb","yfa"]
+["abx","agz","bgc","bfc"]
+["xga","xfb","yfa"]
+["aaab","aaac"]
+["epdzz","vjoxh"]
