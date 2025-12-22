@@ -1,0 +1,8 @@
+["abcxyz","abcyzz","abcyzz","abcyzz"]
+["zyxwvutsrq","yxwvutsrqp","xwvutsrqpo"]
+["aaabbbcccddd","aaabbbcccddd","aaabbbcccddd"]
+["qwertyuiop","asdfghjklp","zxcvbnmqop"]
+["abcdefghijklmnop","bbcdefghijklmnop","cbcdefghijklmnop","dbcdefghijklmnop"]
+["mmmmnnnnoooopppp","mmmnonnnoooopppp","mmmmnnnnoooopppp"]
+["azazazazaz","bzbzbzbzbz","czczczczcz","dzdzdzdzdz"]
+["abcdefghijklmnopqrst","abcdefghijklmnopqrst","abcdefghijklmnopqrst"]
