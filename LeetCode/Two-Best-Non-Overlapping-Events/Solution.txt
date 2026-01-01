@@ -1,0 +1,27 @@
+1import java.util.*;
+2
+3class Solution {
+4    public int maxTwoEvents(int[][] events) {
+5                int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE, res = 0, len =events.length;
+6        PriorityQueue<int[]> pq = new PriorityQueue<>((a,b)->a[0]==b[0]?b[1]-a[1]:b[0]-a[0]);
+7        for(int i=0; i<len; i++){
+8            pq.add(events[i]);
+9            min = Math.min(min, events[i][0]);
+10            max = Math.max(max, events[i][1]);
+11        }
+12        TreeMap<Integer, Integer> map = new TreeMap<>();
+13        map.put(max+1, 0);
+14        int currMax = 0;
+15        while(!pq.isEmpty()){
+16            int[] a = pq.poll();
+17            currMax = Math.max(currMax, a[2]);
+18            map.put(a[0], currMax);
+19        }
+20        for(int i=0; i<len; i++){
+21            int curr = events[i][2];
+22            int pair = map.get(map.ceilingKey(events[i][1]+1));
+23            res = Math.max(res, curr+pair);
+24        }
+25        return res;
+26    }
+27}
